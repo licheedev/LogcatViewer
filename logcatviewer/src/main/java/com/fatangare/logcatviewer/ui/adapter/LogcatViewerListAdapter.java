@@ -217,6 +217,11 @@ public class LogcatViewerListAdapter extends BaseAdapter {
      * @param logEnry new log-entry
      */
     public void addLogEntry(String logEnry) {
+
+        if (TextUtils.isEmpty(logEnry)) {
+            return;
+        }
+        
         mLogcatData.add(logEnry);
         addFilterLogcatEntry(logEnry);
         notifyDataSetChanged();
